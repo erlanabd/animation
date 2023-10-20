@@ -1,0 +1,316 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.section {
+  position: absolute;
+  background: url(./img/bg2.jpeg);
+  background-size: 100%;
+  color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: animationBg 12s linear infinite;
+}
+.stars span {
+  z-index: 2;
+  display: block;
+  position: absolute;
+  background: white;
+  color: white;
+  width: 25px;
+  height: 2px;
+  top: 20%;
+  border-radius: 50%;
+  box-shadow: 100px -19px 38px 17px rgba(34, 60, 80, 0.2);
+  animation: animate 3s linear infinite;
+}
+
+span:nth-child(1) {
+  top: 0;
+  right: 0;
+  left: initial;
+  animation-delay: 0s;
+  animation-duration: 1s;
+}
+span:nth-child(2) {
+  top: 0;
+  right: 80px;
+  left: initial;
+  animation-delay: 0.2s;
+  animation-duration: 3s;
+}
+span:nth-child(3) {
+  top: 80;
+  right: 0px;
+  left: initial;
+  animation-delay: 0.4s;
+  animation-duration: 2s;
+}
+span:nth-child(4) {
+  top: 0;
+  right: 180px;
+  left: initial;
+  animation-delay: 0.6s;
+  animation-duration: 1.5s;
+}
+span:nth-child(5) {
+  top: 0;
+  right: 400px;
+  left: initial;
+  animation-delay: 0.8s;
+  animation-duration: 2.5s;
+}
+span:nth-child(6) {
+  top: 0;
+  right: 600px;
+  left: initial;
+  animation-delay: 1s;
+  animation-duration: 3s;
+}
+@keyframes animationBg {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes animate {
+  0% {
+    transform: rotate(315deg) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(315deg) translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+/* Cat */
+.cat {
+  position: relative;
+  height: 170px;
+  width: 221px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* End Cat */
+
+/* Ear */
+.ear {
+  position: absolute;
+  background: #fff;
+  width: 25%;
+  height: 60%;
+  top: -30%;
+}
+.ear-left {
+  position: relative;
+  left: -7%;
+  border-radius: 70% 30% 0% 0% / 100% 100% 0% 0%;
+  transform: rotate(-15deg);
+  animation: leftEarMovement 2s ease-in-out infinite;
+}
+.ear-left::before::after {
+  right: 10%;
+}
+.ear-left::after {
+  transform: rotate(-45deg);
+}
+
+.ear-right {
+  right: -7%;
+  border-radius: 30% 70% 0% 0% / 100% 100% 0% 0%;
+  transform: rotate(15deg);
+  animation: rightEarMovement 2s ease-in-out infinite;
+}
+@keyframes leftEarMovement {
+  0% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+
+  100% {
+    transform: rotate(-15deg);
+  }
+}
+@keyframes rightEarMovement {
+  0% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+
+  100% {
+    transform: rotate(15deg);
+  }
+}
+/* End Ear */
+
+/* Ear Hair */
+.ear-left::before {
+  content: "";
+  position: absolute;
+  bottom: 24%;
+  left: 82%;
+  height: 10%;
+  width: 5%;
+  border-radius: 50%;
+  background: black;
+}
+.ear-left::after {
+  content: "";
+  position: absolute;
+  bottom: 24%;
+  left: 76%;
+  height: 10%;
+  width: 5%;
+  border-radius: 50%;
+  background: black;
+}
+.ear-right::before {
+  content: "";
+  position: absolute;
+  bottom: 23%;
+  left: 29%;
+  transform: rotate(45deg);
+  height: 10%;
+  width: 5%;
+  border-radius: 50%;
+  background: black;
+}
+.ear-right::after {
+  content: "";
+  position: absolute;
+  bottom: 24%;
+  left: 22%;
+  height: 10%;
+  width: 5%;
+  border-radius: 50%;
+  background: black;
+}
+/* End Ear Hair */
+
+/* Face */
+.face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: url(./img/bg2.jpeg);
+  border-radius: 50%;
+  top: 0;
+}
+/* End Face */
+
+/* Eye */
+.eye {
+  position: absolute;
+  top: 35%;
+  height: 30%;
+  width: 31%;
+  background: white;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+.eye::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0s;
+  width: 100%;
+  border-radius: 0 0 50% 50% / 0 0 40% 40%;
+  background: url(./img/pexels-aleksandar-pasaric-1694000.jpg) center center /
+    cover no-repeat;
+  animation: closeEyes 4s ease-in infinite;
+}
+
+@keyframes closeEyes {
+  0% {
+    height: 0;
+  }
+
+  90% {
+    height: 0%;
+  }
+  92.5% {
+    height: 100%;
+  }
+  95% {
+    height: 0;
+  }
+  97.5% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+
+.eye-left {
+  left: 0;
+}
+.eye-left::before {
+  right: -5%;
+}
+.eye-right {
+  right: 0;
+}
+.eye-right::before {
+  left: -5%;
+}
+/* End Eye */
+/* Eye Pupil */
+.eye-pupil {
+  position: absolute;
+  top: 25%;
+  height: 50%;
+  width: 20%;
+  background: black;
+  border-radius: 50%;
+}
+.eye-pupil::after {
+  content: "";
+  position: absolute;
+  top: 30%;
+  right: -5%;
+  height: 4px;
+  width: 4px;
+  border-radius: 50%;
+  background: #fff;
+}
+.eye-left .eye-pupil {
+  right: 30%;
+}
+.eye-right .eye-pupil {
+  left: 30%;
+}
+
+/* @keyframes  */
+/* End Eye Pupil */
+/* Muzzle */
+.muzzle {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+  background: #fff;
+  width: 20px;
+  height: 10px;
+}
+
+/* End Muzzle */
